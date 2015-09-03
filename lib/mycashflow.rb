@@ -1,8 +1,6 @@
 require 'httparty'
+
+require 'mycashflow/client'
 require 'mycashflow/version'
 
-module MyCashflow
-  class Client
-    include HTTParty
-  end
-end
+module MyCashflow; end
