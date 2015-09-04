@@ -25,7 +25,7 @@ client.categories.get
 client.categories(1).get
 
 # Get category's subcategories
-client.categories(1).get
+client.categories(1).subcategories.get
 ```
 
 **Things to do:**
