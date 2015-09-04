@@ -30,6 +30,5 @@ client.categories(1).subcategories.get
 
 **Things to do:**
 
-1. Make it work perhaps?
-2. Add caching
-3. Write tests
+1. Add caching
+2. Write tests
