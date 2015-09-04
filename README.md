@@ -11,16 +11,20 @@ gem install mycashflow
 ```
 require 'mycashflow'
 
+# Initialize the client
 client = MyCashflow::Client.new({
-    user: 'username',
-    pass: 'password',
-    base: 'https://myshop.com/api/v1'
+    base_url: 'https://myshop.com/api/v1',
+    username: 'username',
+    password: 'password'
   })
 
 # Get all categories
 client.categories.get
 
 # Get category by ID
+client.categories(1).get
+
+# Get category's subcategories
 client.categories(1).get
 ```
 

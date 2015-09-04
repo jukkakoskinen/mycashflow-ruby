@@ -3,48 +3,52 @@ module MyCashflow
     include HTTParty
 
     def initialize(config = {})
-      self.class.base_uri(config[:base])
       @path_parts = []
-      @api_user = config[:user] || ENV['MYCASHFLOW_API_USER']
-      @api_pass = config[:pass] || ENV['MYCASHFLOW_API_PASS']
-      @api_base = config[:base] || ENV['MYCASHFLOW_API_BASE']
+      @username = config[:username] || ENV['MYCASHFLOW_USERNAME']
+      @password = config[:password] || ENV['MYCASHFLOW_PASSWORD']
+      @base_url = config[:base_url] || ENV['MYCASHFLOW_BASE_URL']
+
+      self.class.base_uri(@base_url)
+      self.class.headers({ 'Accept' => 'application/json' })
+      self.class.basic_auth(@username, @password)
     end
 
     def method_missing(method, *args)
-      puts args
       @path_parts << method.to_s.gsub('_', '-').downcase
       @path_parts << args if args.length > 0
       @path_parts.flatten!
       self
     end
 
-    def request_options
-      headers = {}
-      headers[:accept] = 'application/json'
-      headers[:basic_auth] = { username: @api_user, password: @api_pass }
-      headers
-    end
-
     def path
-      @path_parts.join('/')
+      "/#{@path_parts.join('/')}"
     end
 
     def reset
+      @path_parts = []
     end
 
     def get(params = {})
+      self.class.get(path)
+    ensure
       reset
     end
 
     def create(params = {})
+      self.class.create(path, params)
+    ensure
       reset
     end
 
     def update(params = {})
+      self.class.update(path, params)
+    ensure
       reset
     end
 
     def delete(params = {})
+      self.class.delete(path, params)
+    ensure
       reset
     end
   end
