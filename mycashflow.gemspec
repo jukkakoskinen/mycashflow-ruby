@@ -5,7 +5,7 @@ require 'mycashflow/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "mycashflow"
-  spec.version       = Mycashflow::VERSION
+  spec.version       = MyCashflow::VERSION
   spec.authors       = ["Jukka Koskinen"]
   spec.email         = ["jukka@koskinen.io"]
 
