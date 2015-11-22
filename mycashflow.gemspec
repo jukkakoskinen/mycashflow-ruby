@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jukka Koskinen"]
   spec.email         = ["jukka@koskinen.io"]
 
-  spec.summary       = %q{A wrapper for the MyCashflow API}
-  spec.description   = %q{A wrapper for the MyCashflow API}
+  spec.summary       = %q{MyCashflow API Client}
+  spec.description   = %q{A simple client for the MyCashflow API}
   spec.homepage      = "https://github.com/jukkakoskinen/mycashflow-ruby"
   spec.license       = "MIT"
 
@@ -23,5 +23,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", "~> 0"
 end
