@@ -1,5 +1,7 @@
 # MyCashflow API
 
+https://rubygems.org/gems/mycashflow
+
 A work-in-progress Ruby client for the MyCashflow API.
 
 Client API inspired by [Gibbon](https://github.com/amro/gibbon).
